@@ -16,9 +16,15 @@ public class Team {
         return teamTitle;
     }
 
-    //вывод информации о всех членах команды
     public Member[] getMembers() {
         return members;
+    }
+
+    public void teamInfo(Member[] members) {
+        for (Member member : members) {
+            System.out.println("Имя игрока: " + member.getName() + "; Сила: " + member.getStrenght()+ "; Выносливость: " + member.getStamina() + "; Ловкость: " + member.getAgility() +  "; Скорость: " + member.getSpeed());
+        }
+        System.out.println();
     }
 
 

@@ -15,7 +15,7 @@ public class Main {
         Course Effect = new Course("Эффективность", 3, 4, 3, 3);
         Course Light = new Course("Легкость", 1, 2, 4, 4);
 
-
+        Arrow.teamInfo(members);
 
         Mass.courseInfo();
         System.out.println(Mass.doIt(Arrow));
@@ -26,6 +26,7 @@ public class Main {
         Light.courseInfo();
         System.out.println(Light.doIt(Arrow));
 
+        Arrow.getMembers();
 
 
 

@@ -46,7 +46,7 @@ public class Course {
         System.out.println("Требуемое значение выносливости для прохождения: " + staminaDifficulty);
         System.out.println("Требуемое значение ловкости для прохождения: " + agilityDifficulty);
         System.out.println("Требуемое значение скорости для прохождения: " + speedDifficulty);
-
+        System.out.println();
     }
 
     public String doIt(Team team) {
