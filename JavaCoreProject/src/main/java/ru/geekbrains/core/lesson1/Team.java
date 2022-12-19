@@ -20,6 +20,7 @@ public class Team {
         return members;
     }
 
+    //вывод информации о каждом члене команды
     public void teamInfo(Member[] members) {
         for (Member member : members) {
             System.out.println("Имя игрока: " + member.getName() + "; Сила: " + member.getStrenght()+ "; Выносливость: " + member.getStamina() + "; Ловкость: " + member.getAgility() +  "; Скорость: " + member.getSpeed());

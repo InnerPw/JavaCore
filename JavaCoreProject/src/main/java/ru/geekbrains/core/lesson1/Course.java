@@ -40,6 +40,7 @@ public class Course {
         return speedDifficulty;
     }
 
+    //вывод информации об испытании
     public void courseInfo() {
         System.out.printf("Сложность испытания %s:\n", courseTitle);
         System.out.println("Требуемое значение силы для прохождения: " + strenghtDifficulty);
@@ -49,6 +50,7 @@ public class Course {
         System.out.println();
     }
 
+    //результат прохождения испытания каждым игроком
     public String doIt(Team team) {
         result = "Название команды: "+ team.getTeamTitle()+ " \n";
         System.out.println(result);
@@ -64,6 +66,7 @@ public class Course {
         return result;
     }
 
+    //результат прохождения испытания игроком
     public void courseResult(int memberStrenght, int memberStamina, int memberAgility, int memberSpeed) {
         if(memberStrenght >= strenghtDifficulty && memberStamina >= staminaDifficulty && memberAgility >= agilityDifficulty && memberSpeed >= speedDifficulty) {
             result = " прошел(а) испытание " + getCourseTitle() + " \n";
