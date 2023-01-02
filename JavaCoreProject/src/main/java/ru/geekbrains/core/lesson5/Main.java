@@ -22,11 +22,18 @@ public class Main {
         //System.out.println(fileCSV.isDirectory());
 
         createFileObjects();
-        writer();
-        //writeStream();
+        //writer();
+        writeStream();
 
         AppData appData = readToObject();
 
+
+//        System.out.println(appData.getHeader()[0] + " " + appData.getHeader()[1] + " " + appData.getHeader()[2]);
+//        for (int i = 0; i < 3; i++) {
+//                System.out.println(appData.getData()[i][0] + " " + appData.getData()[i][1] + " " + appData.getData()[i][2]);
+//        }
+
+        appData.show();
 
     }
 
@@ -45,6 +52,21 @@ public class Main {
         }
     }
 
+    public static void writeStream() throws IOException {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(pathToFile)){
+            for(byte b :title.getBytes(StandardCharsets.UTF_8)){
+                fileOutputStream.write(b);
+            }
+            for(FileObject fIleObject : fileObjectArrayList){
+                String raw = fIleObject.getValue() + ";" + fIleObject.getValueFrom()
+                        + ";" + fIleObject.getValueTo() + ";"+ System.getProperty("line.separator");
+                for(byte b :raw.getBytes(StandardCharsets.UTF_8)){
+                    fileOutputStream.write(b);
+                }
+            }
+        }
+    }
+
     public static AppData readToObject() throws IOException {
         AppData appData = new AppData();
         List<List<String>> records = new ArrayList<>();
@@ -55,7 +77,7 @@ public class Main {
                 String[] values = line.split(";");
                 records.add(Arrays.asList(values));
             }
-        };
+        }
 
         int[][] resultData = new int[records.size()][3];
 
@@ -68,5 +90,7 @@ public class Main {
         return appData;
 
     }
+
+
 
 }
