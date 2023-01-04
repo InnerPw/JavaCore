@@ -1,8 +1,12 @@
 package ru.geekbrains.core.lesson6;
 
+
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.internal.Util;
+import okhttp3.OkHttpClient;
+
 
 import java.io.*;
 import java.util.Properties;
@@ -21,7 +25,7 @@ public class Main {
                 .addPathSegment("v1")
                 .addPathSegment("daily")
                 .addPathSegment("5day")
-                .addPathSegment("295212_PC")
+                .addPathSegment("295212")
                 .addQueryParameter("apikey", "5c8J5qhgvDXs2SAxTIRWjQT1H1yE7WxW")
                 .addQueryParameter("language", "ru-ru")
                 .addQueryParameter("metric", "true")
