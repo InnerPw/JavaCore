@@ -3,19 +3,14 @@ package ru.geekbrains.core.lesson6;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.Response;
 
 import java.io.*;
-import java.io.IOException;
-import java.io.StringReader;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class Main {
-    //static Properties prop = new Properties();
 
     public static void main(String[] args) throws IOException {
-        //loadProperties();
+
         OkHttpClient client = new OkHttpClient();
 
         // Сегментированное построение URL
@@ -42,10 +37,6 @@ public class Main {
 
         String jsonResponse = client.newCall(requesthttp).execute().body().string();
         System.out.println(jsonResponse);
-        //ObjectMapper mapper = new ObjectMapper();
-        //StringReader reader = new StringReader(jsonResponse);
 
-        //Example example = mapper.readValue(reader, Example.class);
-        System.out.println();
     }
 }
