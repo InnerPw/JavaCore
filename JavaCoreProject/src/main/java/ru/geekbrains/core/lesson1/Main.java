@@ -18,6 +18,7 @@ public class Main {
         Course Effect = new Course("Эффективность", 3, 4, 3, 3);
         Course Light = new Course("Легкость", 1, 2, 4, 4);
 
+        //
         //выводим информацию об игроках в команде
         Arrow.teamInfo(members);
 

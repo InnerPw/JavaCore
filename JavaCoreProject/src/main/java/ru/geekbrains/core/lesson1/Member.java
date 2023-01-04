@@ -35,6 +35,7 @@ public class Member {
         return speed;
     }
 
+    //
     //вывод информации о члене команды
     public void teamMemberInfo() {
         System.out.println("Имя игрока: " + name + "; Сила: " + strenght+ "; Выносливость: " + stamina + "; Ловкость: " + agility +  "; Скорость: " + speed);
