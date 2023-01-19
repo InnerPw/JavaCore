@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ru.geekbrains.core.lesson3.task2.Apple;
 import ru.geekbrains.core.lesson7.enums.Periods;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -73,9 +74,21 @@ public class AccuWeatherProvider implements WeatherProvider {
 
             String jsonResponse = client.newCall(request).execute().body().string();
 
-            String str = objectMapper.readTree(jsonResponse).at("/DailyForecasts/Date").asText();
-            List<WeatherResponse> wResponse = objectMapper.readValue(str, new TypeReference<List<WeatherResponse>>() {});;
-            System.out.println(wResponse);
+            String str = objectMapper.readTree(jsonResponse).at("/Headline/EffectiveDate").asText();
+            //ArrayList<String> str = new ArrayList<>();
+//            for (String s : str) {
+//                s = objectMapper.readTree(jsonResponse).at("/Headline/EffectiveDate").asText();
+//                System.out.println(s + "!!!");
+//            }
+            System.out.println(str);
+
+            //List<WeatherResponse> wResponse = objectMapper.readValue(str, new TypeReference<List<WeatherResponse>>() {});;
+            //List<WeatherResponse> wResp = objectMapper.readValue(str, new TypeReference<List<WeatherResponse>>() {});
+            //System.out.println(str + "!!!");
+//            for (WeatherResponse weatherResponse : wResp) {
+//                String json = objectMapper.writeValueAsString(weatherResponse);
+//                System.out.println(json);
+//            }
 
         }
     }
